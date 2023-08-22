@@ -1,12 +1,14 @@
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import AlbumsListScreen from 'screens/AlbumsListScreen';
+import {AppNavigator} from 'navigator';
+import {Provider} from 'react-redux';
+import {store} from 'redux-store';
 
 const App: React.FC = () => {
   return (
-    <View style={{flex: 1}}>
-      <AlbumsListScreen albumName="Anything" />
-    </View>
+    <Provider store={store}>
+      <AppNavigator />
+    </Provider>
   );
 };
 

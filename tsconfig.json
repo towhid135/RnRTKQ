@@ -6,7 +6,9 @@
     "baseUrl": "." ,
    "paths": {
     "*": ["src/*"],
-    "@screens/*":["src/screens/*"]
+    "@screens/*":["src/screens/*"],
+    "@custom-hooks": ["src/custom-hooks/*"],
+    // "@env":["node_modules/react-native-dotenv"]
    },
 
     /* Completeness */
