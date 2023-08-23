@@ -1,10 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Keys} from '../supported-keys-values/supportedKeysValues';
+import {Keys, Values} from '../supported-keys-values/supportedKeysValues';
 
 //storing object
-export const setData = async (storageKey: Keys, object: object) => {
+export const setData = async (storageKey: Keys, value: Values) => {
   try {
-    const jsonFormatObject = JSON.stringify(object);
+    const jsonFormatObject = JSON.stringify(value);
     await AsyncStorage.setItem(`@${storageKey}`, jsonFormatObject);
   } catch (err) {
     console.log('Async storage storeData error: ', err);

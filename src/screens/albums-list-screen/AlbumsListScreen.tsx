@@ -7,6 +7,8 @@ import {AlbumsListStackScreenProps} from 'navigator';
 import {useResponsive} from 'custom-hooks';
 import {AlbumCard} from 'components';
 import {styles} from './styles';
+import {setData} from 'utils';
+
 export const AlbumsListScreen = ({
   route,
   navigation,
@@ -14,6 +16,10 @@ export const AlbumsListScreen = ({
   const {data, error, isLoading, refetch} = useAlbumsListQuery();
   const {Rp, Rh} = useResponsive();
   const Styles = styles({Rp, Rh});
+
+  // const set = async() =>{
+  //   await setData('mode',{})
+  // }
 
   return (
     <View style={Styles.container}>
