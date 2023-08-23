@@ -24,7 +24,7 @@ module.exports = {
         },
       },
     ],
-
+    'react-native-reanimated/plugin',
     // ... other configs, if any
   ],
 };

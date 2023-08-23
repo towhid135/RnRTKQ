@@ -1,4 +1,4 @@
-import {StyleSheet, StyleSheetProperties} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {useResponsive} from 'custom-hooks';
 
 export const styles = ({Rp, Rh}: UseResponsive) =>
@@ -16,7 +16,7 @@ export const styles = ({Rp, Rh}: UseResponsive) =>
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
-      paddingHorizontal: Rp(2),
+      paddingHorizontal: Rp(3),
       marginBottom: Rh(5),
     },
   });

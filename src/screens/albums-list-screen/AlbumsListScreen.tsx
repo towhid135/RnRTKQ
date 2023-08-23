@@ -1,4 +1,4 @@
-import React, {ReactNode} from 'react';
+import React, {ReactNode, useCallback} from 'react';
 import {StyleSheet, Text, View, Button, ScrollView, Image} from 'react-native';
 import {Card} from 'components';
 import {API_URL} from '@env';
@@ -22,7 +22,7 @@ export const AlbumsListScreen = ({
         style={Styles.scrollView}>
         <View style={Styles.albumCardsContainer}>
           {data?.slice(0, 10).map((item, index) => {
-            return <AlbumCard {...item} />;
+            return <AlbumCard key={item.id} {...item} />;
           })}
         </View>
       </ScrollView>
