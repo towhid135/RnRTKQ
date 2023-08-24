@@ -1,5 +1,6 @@
 import {StackScreenProps} from '@react-navigation/stack';
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {DrawerScreenProps} from '@react-navigation/drawer';
 import {CompositeScreenProps} from '@react-navigation/native';
 
 export type AlbumsListStackParams = {
@@ -20,6 +21,10 @@ export type BottomTabParams = {
   Artists: undefined;
 };
 
+export type DrawerParams = {
+  BottomTab: undefined;
+};
+
 // export type BottomTabScreenProps = BottomTabScreenProps<
 //   BottomTabParams,
 //   'Home'
@@ -27,10 +32,16 @@ export type BottomTabParams = {
 
 export type AlbumsListStackScreenProps = CompositeScreenProps<
   StackScreenProps<AlbumsListStackParams, 'AlbumsListScreen'>,
-  BottomTabScreenProps<BottomTabParams, 'Home'>
+  CompositeScreenProps<
+    BottomTabScreenProps<BottomTabParams>,
+    DrawerScreenProps<DrawerParams>
+  >
 >;
 
 export type ArtistsListStackScreenProps = CompositeScreenProps<
   StackScreenProps<ArtistsListStackParams, 'ArtistsListScreen'>,
-  BottomTabScreenProps<BottomTabParams, 'Home'>
+  CompositeScreenProps<
+    BottomTabScreenProps<BottomTabParams>,
+    DrawerScreenProps<DrawerParams>
+  >
 >;

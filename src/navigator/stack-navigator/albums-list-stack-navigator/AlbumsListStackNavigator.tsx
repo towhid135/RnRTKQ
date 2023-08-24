@@ -5,7 +5,7 @@ import {AlbumsListStackParams} from 'navigator/type/types';
 export const AlbumsListStackNavigator: React.FC = () => {
   const Stack = createStackNavigator<AlbumsListStackParams>();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="AlbumsListScreen" component={AlbumsListScreen} />
     </Stack.Navigator>
   );

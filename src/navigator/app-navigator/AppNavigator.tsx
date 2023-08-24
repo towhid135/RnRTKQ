@@ -1,10 +1,6 @@
 import React, {useEffect} from 'react';
-import {
-  NavigationContainer,
-  NavigationContainerProps,
-} from '@react-navigation/native';
-import {AlbumsListStackNavigator} from 'navigator/stack-navigator';
-import {TabNavigator} from 'navigator/tab-navigator/TabNavigator';
+import {NavigationContainer} from '@react-navigation/native';
+import {DrawerNavigator} from 'navigator/drawer-navigator/DrawerNavigator';
 import {getMode} from 'utils';
 import {fetchModeOnRedux} from 'redux-store/slice';
 import {useDispatch} from 'react-redux';
@@ -20,7 +16,7 @@ export const AppNavigator: React.FC = () => {
   }, []);
   return (
     <NavigationContainer>
-      <TabNavigator />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 };
