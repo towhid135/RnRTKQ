@@ -1,5 +1,4 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import {Keys, Values} from '../supported-keys-values/supportedKeysValues';
 
 //storing object
 export const setData = async (storageKey: Keys, value: Values) => {
@@ -13,7 +12,7 @@ export const setData = async (storageKey: Keys, value: Values) => {
 };
 
 //get object
-export const getData = async (storageKey: string) => {
+export const getData = async (storageKey: Keys) => {
   try {
     const jsonFormatObject = await AsyncStorage.getItem(`@${storageKey}`);
     return jsonFormatObject != null ? JSON.parse(jsonFormatObject) : null;
@@ -23,7 +22,7 @@ export const getData = async (storageKey: string) => {
 };
 
 //remove item
-export const removeData = async (storageKey: string) => {
+export const removeData = async (storageKey: Keys) => {
   try {
     await AsyncStorage.removeItem(`@${storageKey}`);
   } catch (err) {

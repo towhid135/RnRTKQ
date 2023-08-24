@@ -1,9 +1,10 @@
 import {configureStore} from '@reduxjs/toolkit';
 import {albumApi} from 'redux-store/api/album';
-import {counterSlice} from 'redux-store/slice';
+import colorModeSlice from 'redux-store/slice/mode/colorModeSlice';
 
 export const store = configureStore({
   reducer: {
+    colorMode: colorModeSlice,
     [albumApi.reducerPath]: albumApi.reducer,
   },
   middleware: getDefaultMiddleware =>

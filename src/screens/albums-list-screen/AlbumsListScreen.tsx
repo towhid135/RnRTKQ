@@ -7,7 +7,7 @@ import {AlbumsListStackScreenProps} from 'navigator';
 import {useResponsive} from 'custom-hooks';
 import {AlbumCard} from 'components';
 import {styles} from './styles';
-import {setData} from 'utils';
+import {setMode} from 'utils';
 
 export const AlbumsListScreen = ({
   route,
@@ -17,15 +17,12 @@ export const AlbumsListScreen = ({
   const {Rp, Rh} = useResponsive();
   const Styles = styles({Rp, Rh});
 
-  // const set = async() =>{
-  //   await setData('mode',{})
-  // }
-
   return (
     <View style={Styles.container}>
       <ScrollView
         showsVerticalScrollIndicator={false}
         style={Styles.scrollView}>
+        <Button title="Set" onPress={setMode} />
         <View style={Styles.albumCardsContainer}>
           {data?.slice(0, 10).map((item, index) => {
             return <AlbumCard key={item.id} {...item} />;
