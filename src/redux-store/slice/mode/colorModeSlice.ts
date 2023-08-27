@@ -1,5 +1,6 @@
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
-import {RootState} from 'redux-store/store';
+import {AppDispatch, RootState} from 'redux-store/store';
+import {setMode} from 'utils';
 
 const initialState: Mode = {
   mode: 'light',
@@ -13,17 +14,19 @@ const colorModeSlice = createSlice({
       state.mode = action.payload;
       console.log('fetchedModeOnRedux is: ', action.payload);
     },
-    lightMode: state => {
-      state.mode = 'light';
-      console.log('lightMode successfully set on redux');
-    },
-    darkMode: state => {
-      state.mode = 'dark';
-      console.log('darkMode successfully set on redux');
+    toggleMode: (state, action: PayloadAction<Theme>) => {
+      if (action.payload === 'light') state.mode = 'dark';
+      else state.mode = 'light';
     },
   },
 });
 
-export const {lightMode, darkMode, fetchModeOnRedux} = colorModeSlice.actions;
+export const setTheme = (mode: Theme) => async (dispatch: AppDispatch) => {
+  console.log('inside setTheme');
+  await dispatch(toggleMode(mode));
+  await setMode(mode);
+};
+
+export const {toggleMode, fetchModeOnRedux} = colorModeSlice.actions;
 
 export default colorModeSlice.reducer;

@@ -1,3 +1,10 @@
+import {ReactNode} from 'react';
+import {StyleSheet, ViewProps} from 'react-native';
+
+export type CardProps = ViewProps & {
+  children: ReactNode;
+};
+
 export type DrawerElementVariant = 'switch-element' | 'icon-element';
 export type ElementTitle = 'Dark Mode';
 

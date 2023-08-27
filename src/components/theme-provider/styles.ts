@@ -5,10 +5,6 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      alignItems: 'center',
-      // backgroundColor: colors[mode].background,
-    },
-    switchElementStyle: {
-      marginTop: Rp(2),
+      backgroundColor: colors[mode].background,
     },
   });

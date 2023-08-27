@@ -8,9 +8,9 @@ export const getMode = async (): Promise<Theme | undefined> => {
   }
 };
 
-export const setMode = async () => {
+export const setMode = async (mode: Theme) => {
   try {
-    await setData('mode', {mode: 'dark'});
+    await setData('mode', {mode: mode === 'light' ? 'dark' : 'light'});
     console.log('mode set successfully');
   } catch {
     console.log('mode set failed');

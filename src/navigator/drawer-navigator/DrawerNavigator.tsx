@@ -7,7 +7,9 @@ import {DrawerContent} from 'components';
 export const DrawerNavigator = () => {
   const Drawer = createDrawerNavigator<DrawerParams>();
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator
+      drawerContent={props => <DrawerContent {...props} />}
+      screenOptions={{}}>
       <Drawer.Screen name="BottomTab" component={TabNavigator} />
     </Drawer.Navigator>
   );

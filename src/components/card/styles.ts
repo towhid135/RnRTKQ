@@ -3,12 +3,14 @@ import {colors} from 'theme';
 
 export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
-    container: {
-      flex: 1,
-      alignItems: 'center',
+    card: {
+      shadowColor: colors[mode].shadow,
+      shadowOpacity: 0.15,
+      shadowOffset: {width: 0.15, height: 0.15},
+      shadowRadius: 10,
+      elevation: 7,
+      borderRadius: 15,
+      flex: 0,
       // backgroundColor: colors[mode].background,
-    },
-    switchElementStyle: {
-      marginTop: Rp(2),
     },
   });

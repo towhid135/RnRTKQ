@@ -1,12 +1,13 @@
 import {StyleSheet} from 'react-native';
-import {useResponsive} from 'custom-hooks';
+import {colors} from 'theme';
 
-export const styles = ({Rp, Rh}: UseResponsive) =>
+export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
     container: {
       flex: 1,
       alignItems: 'center',
       justifyContent: 'center',
+      // backgroundColor: colors[mode].background,
     },
     scrollView: {
       flex: 1,
