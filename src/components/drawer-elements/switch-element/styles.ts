@@ -8,6 +8,7 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       justifyContent: 'space-between',
       alignItems: 'center',
       borderWidth: 1,
+      borderColor: colors[mode].borderColor,
       padding: Rp(2),
       borderRadius: Rp(1),
       width: '95%',
