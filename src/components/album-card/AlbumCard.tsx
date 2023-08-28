@@ -1,22 +1,26 @@
 import React from 'react';
-import {Text, View, Image} from 'react-native';
+import {Text, View, Image, TouchableOpacity} from 'react-native';
 import {Card} from 'components/card';
 import {useResponsive} from 'custom-hooks';
 import {useTypedSelector} from 'redux-store';
 import {styles} from './styles';
+import {AlbumCardProps} from 'components/type/type';
 
-export const AlbumCard: React.FC<Album> = Album => {
+export const AlbumCard = ({album, cardPressHandler}: AlbumCardProps) => {
+  const {albumId, id, thumbnailUrl, title, url} = album;
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {Rp, Rh} = useResponsive();
   const Styles = styles({Rp, Rh, mode});
   return (
-    <Card key={Album.id} style={Styles.card}>
-      <View style={Styles.imageTextContainer}>
-        <Image source={{uri: Album.url}} style={Styles.imageStyle} />
-        <Text numberOfLines={2} style={Styles.textStyle}>
-          {Album.title}
-        </Text>
-      </View>
-    </Card>
+    <TouchableOpacity activeOpacity={0.8} onPress={cardPressHandler}>
+      <Card key={id} style={Styles.card}>
+        <View style={Styles.imageTextContainer}>
+          <Image source={{uri: url}} style={Styles.imageStyle} />
+          <Text numberOfLines={2} style={Styles.textStyle}>
+            {title}
+          </Text>
+        </View>
+      </Card>
+    </TouchableOpacity>
   );
 };

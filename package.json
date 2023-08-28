@@ -11,7 +11,8 @@
     "package-install": "yarn install && cd ios && pod install && cd ..",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx"
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "link-asset": "npx react-native-asset"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.19.2",
@@ -23,10 +24,12 @@
     "@reduxjs/toolkit": "^1.9.5",
     "react": "18.1.0",
     "react-native": "0.70.10",
+    "react-native-asset": "^2.1.1",
     "react-native-gesture-handler": "^2.12.1",
     "react-native-reanimated": "^3.4.2",
     "react-native-safe-area-context": "^4.7.1",
     "react-native-screens": "^3.24.0",
+    "react-native-vector-icons": "^10.0.0",
     "react-redux": "^8.1.2"
   },
   "devDependencies": {
@@ -37,6 +40,7 @@
     "@types/jest": "^26.0.23",
     "@types/react": "^18.0.21",
     "@types/react-native": "^0.70.6",
+    "@types/react-native-vector-icons": "^6.4.14",
     "@types/react-test-renderer": "^18.0.0",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",

@@ -9,7 +9,9 @@ export const DrawerNavigator = () => {
   return (
     <Drawer.Navigator
       drawerContent={props => <DrawerContent {...props} />}
-      screenOptions={{}}>
+      screenOptions={{
+        headerShown: false,
+      }}>
       <Drawer.Screen name="BottomTab" component={TabNavigator} />
     </Drawer.Navigator>
   );

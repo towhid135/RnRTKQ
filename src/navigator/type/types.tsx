@@ -5,6 +5,7 @@ import {CompositeScreenProps} from '@react-navigation/native';
 
 export type AlbumsListStackParams = {
   AlbumsListScreen: undefined;
+  AlbumDetailsScreen: {album: Album};
 };
 
 export type ArtistsListStackParams = {
@@ -30,8 +31,16 @@ export type DrawerParams = {
 //   'Home'
 // >;
 
-export type AlbumsListStackScreenProps = CompositeScreenProps<
+export type AlbumsListScreenProps = CompositeScreenProps<
   StackScreenProps<AlbumsListStackParams, 'AlbumsListScreen'>,
+  CompositeScreenProps<
+    BottomTabScreenProps<BottomTabParams>,
+    DrawerScreenProps<DrawerParams>
+  >
+>;
+
+export type AlbumDetailsScreenProps = CompositeScreenProps<
+  StackScreenProps<AlbumsListStackParams, 'AlbumDetailsScreen'>,
   CompositeScreenProps<
     BottomTabScreenProps<BottomTabParams>,
     DrawerScreenProps<DrawerParams>
