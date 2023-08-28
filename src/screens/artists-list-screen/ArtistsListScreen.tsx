@@ -3,18 +3,37 @@ import React from 'react';
 import {ArtistsListStackScreenProps} from 'navigator';
 import {useAlbumsListQuery} from 'redux-store';
 import {ThemeProvider} from 'components';
+import {HeaderButton} from 'components';
+import {useResponsive} from 'custom-hooks';
 
 export const ArtistsListScreen = ({
   route,
   navigation,
 }: ArtistsListStackScreenProps) => {
+  const {Rp, Rh} = useResponsive();
   const {data, error, isLoading, refetch} = useAlbumsListQuery();
 
-  // console.log('data from artist list: ', data?.slice(0, 10));
+  const toggleDrawer = () => {
+    navigation.toggleDrawer();
+  };
+
+  navigation.setOptions({
+    headerLeft: () => {
+      return (
+        <HeaderButton
+          variant="icon-button"
+          iconName="menu-outline"
+          iconColor="black"
+          buttonAction={toggleDrawer}
+          style={{marginLeft: Rp(3)}}
+        />
+      );
+    },
+  });
   return (
     <ThemeProvider>
       <View>
-        <Text>ArtistsListScreen</Text>
+        <Text style={{color: 'black'}}>ArtistsListScreen</Text>
       </View>
     </ThemeProvider>
   );

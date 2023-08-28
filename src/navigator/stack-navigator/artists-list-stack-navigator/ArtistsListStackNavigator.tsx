@@ -11,7 +11,7 @@ export const ArtistsListStackNavigator: React.FC = () => {
   console.log('albumsList from Artists: ', albums);
   const Stack = createStackNavigator<ArtistsListStackParams>();
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator>
       <Stack.Screen name="ArtistsListScreen" component={ArtistsListScreen} />
     </Stack.Navigator>
   );
