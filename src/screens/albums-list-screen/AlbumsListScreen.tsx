@@ -37,7 +37,7 @@ export const AlbumsListScreen = ({
           iconName="menu-outline"
           iconColor="black"
           buttonAction={toggleDrawer}
-          style={{marginLeft: Rp(3)}}
+          style={Styles.headerLeft}
         />
       );
     },

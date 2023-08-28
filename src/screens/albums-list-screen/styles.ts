@@ -20,4 +20,7 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       paddingHorizontal: Rp(3),
       marginBottom: Rh(5),
     },
+    headerLeft: {
+      marginLeft: Rp(3),
+    },
   });

@@ -22,7 +22,7 @@ export interface DrawerElementProps {
 export type SwitchElementProps = Omit<DrawerElementProps, 'variant'>;
 
 export type IconButtonVariant = 'icon-button' | 'image-button';
-export type IconName = 'menu-outline';
+export type IconName = 'menu-outline' | 'chevron-back-outline';
 export interface IconButtonProps {
   iconName: IconName;
   iconColor: string;
