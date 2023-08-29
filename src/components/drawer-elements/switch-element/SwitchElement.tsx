@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useCallback} from 'react';
 import {StyleSheet, Text, View, Switch, ViewProps} from 'react-native';
 import {styles} from './styles';
 import {useResponsive} from 'custom-hooks';
@@ -12,11 +12,15 @@ export const SwitchElement = ({
   style,
 }: ViewProps & SwitchElementProps) => {
   const mode = useTypedSelector(state => state.colorMode.mode);
-  const [switchState, setSwitchState] = useState(
-    mode === 'dark' ? true : false,
-  );
+  const [switchState, setSwitchState] = useState(mode === 'dark');
+
+  useEffect(() => {
+    setSwitchState(mode === 'dark');
+  }, [mode]);
+  console.log('mode from SwitchElement: ', mode);
   const {Rp, Rh} = useResponsive();
-  const Styles = styles({Rp, Rh, mode});
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const Styles = StyleFunc();
 
   const switchToggleAction = () => {
     setSwitchState(prev => !prev);

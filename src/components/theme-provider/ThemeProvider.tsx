@@ -1,4 +1,4 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useCallback} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {CardProps} from 'components/type/type';
 import {useResponsive} from 'custom-hooks';
@@ -14,9 +14,9 @@ import Animated, {
 export const ThemeProvider = ({children, style, ...rest}: CardProps) => {
   const isFirstRender = useRef(true);
   const mode = useTypedSelector(state => state.colorMode.mode);
-  console.log('mode from ThemeProvider: ', mode);
   const {Rp, Rh} = useResponsive();
-  const Styles = styles({Rp, Rh, mode});
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const Styles = StyleFunc();
 
   const colorMode = useSharedValue<number>(mode === 'light' ? 0 : 1);
 

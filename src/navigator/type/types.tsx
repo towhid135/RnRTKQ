@@ -1,4 +1,4 @@
-import {StackScreenProps} from '@react-navigation/stack';
+import {NativeStackScreenProps} from '@react-navigation/native-stack';
 import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
 import {DrawerScreenProps} from '@react-navigation/drawer';
 import {CompositeScreenProps} from '@react-navigation/native';
@@ -32,7 +32,7 @@ export type DrawerParams = {
 // >;
 
 export type AlbumsListScreenProps = CompositeScreenProps<
-  StackScreenProps<AlbumsListStackParams, 'AlbumsListScreen'>,
+  NativeStackScreenProps<AlbumsListStackParams, 'AlbumsListScreen'>,
   CompositeScreenProps<
     BottomTabScreenProps<BottomTabParams>,
     DrawerScreenProps<DrawerParams>
@@ -40,7 +40,7 @@ export type AlbumsListScreenProps = CompositeScreenProps<
 >;
 
 export type AlbumDetailsScreenProps = CompositeScreenProps<
-  StackScreenProps<AlbumsListStackParams, 'AlbumDetailsScreen'>,
+  NativeStackScreenProps<AlbumsListStackParams, 'AlbumDetailsScreen'>,
   CompositeScreenProps<
     BottomTabScreenProps<BottomTabParams>,
     DrawerScreenProps<DrawerParams>
@@ -48,7 +48,7 @@ export type AlbumDetailsScreenProps = CompositeScreenProps<
 >;
 
 export type ArtistsListStackScreenProps = CompositeScreenProps<
-  StackScreenProps<ArtistsListStackParams, 'ArtistsListScreen'>,
+  NativeStackScreenProps<ArtistsListStackParams, 'ArtistsListScreen'>,
   CompositeScreenProps<
     BottomTabScreenProps<BottomTabParams>,
     DrawerScreenProps<DrawerParams>

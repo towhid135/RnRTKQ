@@ -1,14 +1,18 @@
 import React from 'react';
-import {createStackNavigator, StackScreenProps} from '@react-navigation/stack';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AlbumDetailsScreen, AlbumsListScreen} from 'screens';
-import {
-  AlbumsListScreenProps,
-  AlbumsListStackParams,
-} from 'navigator/type/types';
+import {AlbumsListStackParams} from 'navigator/type/types';
 import {HeaderButton} from 'components';
-import {useResponsive} from 'custom-hooks';
+// import {NavigationProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-export const AlbumsListStackNavigator: React.FC = ({navigation}) => {
+type AlbumsListStackNavigatorProps = {
+  navigation: NativeStackNavigationProp<AlbumsListStackParams>;
+};
+
+export const AlbumsListStackNavigator = ({
+  navigation,
+}: AlbumsListStackNavigatorProps) => {
   //Header Options
   const options = {
     headerBackTitle: ' ',
@@ -24,18 +28,19 @@ export const AlbumsListStackNavigator: React.FC = ({navigation}) => {
     ),
   };
 
-  const Stack = createStackNavigator<AlbumsListStackParams>();
+  const Stack = createNativeStackNavigator<AlbumsListStackParams>();
   return (
     <Stack.Navigator
       screenOptions={{
         ...options,
       }}>
       <Stack.Screen name="AlbumsListScreen" component={AlbumsListScreen} />
-      <Stack.Screen
-        name="AlbumDetailsScreen"
-        component={AlbumDetailsScreen}
-        options={{presentation: 'modal'}}
-      />
+      <Stack.Group screenOptions={{}}>
+        <Stack.Screen
+          name="AlbumDetailsScreen"
+          component={AlbumDetailsScreen}
+        />
+      </Stack.Group>
     </Stack.Navigator>
   );
 };

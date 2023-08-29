@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		401C71580FA54ABCA46C1B50 /* icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D716237BDE2C4C45804B4A54 /* icons.ttf */; };
 		49E70D652A9C8FC800538A48 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 49E70D642A9C8FC800538A48 /* Fonts */; };
 		7699B88040F8A987B510C191 /* libPods-RnRTKQ-RnRTKQTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RnRTKQ-RnRTKQTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -45,6 +46,7 @@
 		5DCACB8F33CDC322A6C60F78 /* libPods-RnRTKQ.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RnRTKQ.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RnRTKQ/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-RnRTKQ-RnRTKQTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RnRTKQ-RnRTKQTests.release.xcconfig"; path = "Target Support Files/Pods-RnRTKQ-RnRTKQTests/Pods-RnRTKQ-RnRTKQTests.release.xcconfig"; sourceTree = "<group>"; };
+		D716237BDE2C4C45804B4A54 /* icons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = icons.ttf; path = ../assets/fonts/icons.ttf; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -125,6 +127,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				D74433F38EEC4AAFAC1D1B61 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -149,6 +152,15 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-RnRTKQ-RnRTKQTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		D74433F38EEC4AAFAC1D1B61 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D716237BDE2C4C45804B4A54 /* icons.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -248,6 +260,7 @@
 				49E70D652A9C8FC800538A48 /* Fonts in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				401C71580FA54ABCA46C1B50 /* icons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

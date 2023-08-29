@@ -19,7 +19,8 @@ export const AlbumsListScreen = ({
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {data, error, isLoading, refetch} = useAlbumsListQuery();
   const {Rp, Rh} = useResponsive();
-  const Styles = styles({Rp, Rh, mode});
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const Styles = StyleFunc();
 
   const cardPressHandler = (album: Album) => {
     navigation.navigate('AlbumDetailsScreen', {album});

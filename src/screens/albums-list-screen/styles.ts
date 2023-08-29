@@ -21,6 +21,6 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       marginBottom: Rh(5),
     },
     headerLeft: {
-      marginLeft: Rp(3),
+      // marginLeft: Rp(1),
     },
   });

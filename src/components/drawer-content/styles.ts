@@ -3,10 +3,12 @@ import {colors} from 'theme';
 
 export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
-    container: {
+    safeAreView: {
       flex: 1,
       alignItems: 'center',
-      // backgroundColor: colors[mode].background,
+    },
+    container: {
+      flex: 1,
     },
     switchElementStyle: {
       marginTop: Rp(2),

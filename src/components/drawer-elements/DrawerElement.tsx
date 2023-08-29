@@ -1,5 +1,5 @@
-import {StyleSheet, Text, ViewProps, View} from 'react-native';
 import React from 'react';
+import {StyleSheet, Text, ViewProps, View} from 'react-native';
 import {DrawerElementProps} from 'components/type/type';
 import {SwitchElement} from './switch-element/SwitchElement';
 

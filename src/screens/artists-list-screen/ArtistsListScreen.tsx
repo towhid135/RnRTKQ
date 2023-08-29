@@ -1,5 +1,5 @@
+import React, {useCallback} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
 import {ArtistsListStackScreenProps} from 'navigator';
 import {useAlbumsListQuery} from 'redux-store';
 import {ThemeProvider} from 'components';
