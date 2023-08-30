@@ -30,10 +30,7 @@ export const AlbumsListStackNavigator = ({
 
   const Stack = createNativeStackNavigator<AlbumsListStackParams>();
   return (
-    <Stack.Navigator
-      screenOptions={{
-        ...options,
-      }}>
+    <Stack.Navigator screenOptions={{}}>
       <Stack.Screen name="AlbumsListScreen" component={AlbumsListScreen} />
       <Stack.Group screenOptions={{}}>
         <Stack.Screen
