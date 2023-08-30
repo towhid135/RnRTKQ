@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import {
   StyleSheet,
   Text,
@@ -20,7 +20,8 @@ export const IconButton = ({
 }: IconButtonProps & ViewProps) => {
   const {Rp, Rh} = useResponsive();
   const mode = useTypedSelector(state => state.colorMode.mode);
-  const Styles = styles({Rp, Rh, mode});
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
+  const Styles = StyleFunc();
   return (
     <TouchableOpacity
       onPress={buttonAction}

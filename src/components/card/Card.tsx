@@ -10,7 +10,7 @@ import {ThemeProvider} from 'components/theme-provider/ThemeProvider';
 export const Card: React.FC<CardProps> = ({children, style, ...rest}) => {
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {Rp, Rh} = useResponsive();
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
   return (
     <ThemeProvider style={[Styles.card, style]} {...rest}>

@@ -5,6 +5,6 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
     container: {
       flex: 1,
-      backgroundColor: colors[mode].background,
+      backgroundColor: colors[mode].base.tertiary.normal,
     },
   });

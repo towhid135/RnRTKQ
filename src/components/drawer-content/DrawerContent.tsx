@@ -13,7 +13,7 @@ export const DrawerContent = (props: DrawerContentComponentProps) => {
   const dispatch = useTypedDispatch();
   const {Rp, Rh} = useResponsive();
   const mode = useTypedSelector(state => state.colorMode.mode);
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
 
   const switchAction = (mode: Theme) => {

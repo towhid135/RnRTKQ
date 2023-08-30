@@ -11,7 +11,7 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       height: Rh(40),
     },
     title: {
-      color: colors[mode].textColor,
+      color: colors[mode].base.primary.normal,
       marginVertical: Rp(5),
     },
   });

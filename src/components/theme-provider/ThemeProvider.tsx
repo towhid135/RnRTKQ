@@ -10,12 +10,13 @@ import Animated, {
   useAnimatedStyle,
   withTiming,
 } from 'react-native-reanimated';
+import {colors} from 'theme';
 
 export const ThemeProvider = ({children, style, ...rest}: CardProps) => {
   const isFirstRender = useRef(true);
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {Rp, Rh} = useResponsive();
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
 
   const colorMode = useSharedValue<number>(mode === 'light' ? 0 : 1);
@@ -34,7 +35,10 @@ export const ThemeProvider = ({children, style, ...rest}: CardProps) => {
     const backgroundColor = interpolateColor(
       colorMode.value,
       [0, 1],
-      ['#ffffff', '#000000'],
+      [
+        colors['light'].base.tertiary.normal,
+        colors['dark'].base.tertiary.normal,
+      ],
     );
 
     return {

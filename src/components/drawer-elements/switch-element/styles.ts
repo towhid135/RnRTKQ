@@ -8,12 +8,12 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       justifyContent: 'space-between',
       alignItems: 'center',
       borderWidth: 1,
-      borderColor: colors[mode].borderColor,
+      borderColor: colors[mode].base.primary.normal,
       padding: Rp(2),
       borderRadius: Rp(1),
       width: '95%',
     },
     titleStyle: {
-      color: colors[mode].textColor,
+      color: colors[mode].base.primary.dark,
     },
   });

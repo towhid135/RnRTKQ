@@ -2,7 +2,7 @@
   "migIndex": 1,
   "data": [
     {
-      "path": "assets/fonts/icons.ttf",
+      "path": "src/assets/fonts/icons.ttf",
       "sha1": "15940da5bf8bd6bdfdbbc5af387ce4fd8af53bbb"
     }
   ]

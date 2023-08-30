@@ -10,6 +10,11 @@ export interface AlbumCardProps {
   cardPressHandler: () => void;
 }
 
+export interface ArtistCardProps {
+  artist: Artist;
+  cardPressHandler: () => void;
+}
+
 export type DrawerElementVariant = 'switch-element' | 'icon-element';
 export type ElementTitle = 'Dark Mode';
 

@@ -15,7 +15,7 @@ export const AlbumDetailsScreen = ({
   const {albumId, thumbnailUrl, id, title, url} = route.params.album;
   const {Rp, Rh} = useResponsive();
   const mode = useTypedSelector(state => state.colorMode.mode);
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
   return (
     <ThemeProvider>

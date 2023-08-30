@@ -20,6 +20,7 @@ module.exports = {
         alias: {
           '@screens': './src/screens',
           '@custom-hooks': './src/custom-hooks',
+          '@assets': './src/assets',
           // '@env': 'node_modules/react-native-dotenv',
         },
       },

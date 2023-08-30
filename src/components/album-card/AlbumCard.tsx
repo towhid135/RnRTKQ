@@ -12,7 +12,7 @@ export const AlbumCard = ({album, cardPressHandler}: AlbumCardProps) => {
   const {albumId, id, thumbnailUrl, title, url} = album;
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {Rp, Rh} = useResponsive();
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
   return (
     <TouchableOpacity activeOpacity={0.8} onPress={cardPressHandler}>

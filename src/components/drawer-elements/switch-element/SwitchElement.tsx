@@ -5,6 +5,7 @@ import {useResponsive} from 'custom-hooks';
 import {SwitchElementProps} from 'components/type/type';
 import {useTypedSelector} from 'redux-store';
 import {toggleMode} from 'redux-store/slice';
+import {colors} from 'theme';
 
 export const SwitchElement = ({
   title,
@@ -19,7 +20,7 @@ export const SwitchElement = ({
   }, [mode]);
   console.log('mode from SwitchElement: ', mode);
   const {Rp, Rh} = useResponsive();
-  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
 
   const switchToggleAction = () => {
@@ -30,9 +31,12 @@ export const SwitchElement = ({
     <View style={[Styles.container, style]}>
       <Text style={Styles.titleStyle}>{title}</Text>
       <Switch
-        trackColor={{false: '#767577', true: '#81b0ff'}}
-        thumbColor={switchState ? '#81b0ff' : '#f4f3f4'}
-        ios_backgroundColor="#3e3e3e"
+        trackColor={{
+          false: colors[mode].base.secondary.light,
+          true: colors[mode].system.success.normal,
+        }}
+        thumbColor={colors[mode].base.tertiary.light}
+        ios_backgroundColor={colors[mode].base.secondary.light}
         onValueChange={switchToggleAction}
         value={switchState}
       />

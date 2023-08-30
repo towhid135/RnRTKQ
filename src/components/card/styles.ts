@@ -4,7 +4,7 @@ import {colors} from 'theme';
 export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
   StyleSheet.create({
     card: {
-      shadowColor: colors[mode].shadow,
+      shadowColor: colors[mode].base.primary.dark,
       shadowOpacity: 0.15,
       shadowOffset: {width: 0.15, height: 0.15},
       shadowRadius: 10,
