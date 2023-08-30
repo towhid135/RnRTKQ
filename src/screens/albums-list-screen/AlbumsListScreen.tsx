@@ -26,7 +26,9 @@ export const AlbumsListScreen = ({
 }: AlbumsListScreenProps) => {
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {data, error, isLoading, refetch} = useAlbumsListQuery();
+  // console.log('albumsList: ', data?.slice(0, 10));
   const {Rp, Rh} = useResponsive();
+
   const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
 

@@ -18,7 +18,7 @@ export const SwitchElement = ({
   useEffect(() => {
     setSwitchState(mode === 'dark');
   }, [mode]);
-  console.log('mode from SwitchElement: ', mode);
+  // console.log('mode from SwitchElement: ', mode);
   const {Rp, Rh} = useResponsive();
   const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
   const Styles = StyleFunc();
