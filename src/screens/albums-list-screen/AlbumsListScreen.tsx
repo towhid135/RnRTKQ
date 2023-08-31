@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import {Card} from 'components';
 import {API_URL} from '@env';
-import {useAlbumsListQuery} from 'redux-store';
+import {useAlbumsListQuery, useCreateAlbumMutation} from 'redux-store';
 import {AlbumsListScreenProps} from 'navigator';
 import {useResponsive} from 'custom-hooks';
 import {AlbumCard} from 'components';
@@ -26,7 +26,15 @@ export const AlbumsListScreen = ({
 }: AlbumsListScreenProps) => {
   const mode = useTypedSelector(state => state.colorMode.mode);
   const {data, error, isLoading, refetch} = useAlbumsListQuery();
-  // console.log('albumsList: ', data?.slice(0, 10));
+  const [
+    createAlbum,
+    {
+      data: albumData,
+      isLoading: isAlbumLoading,
+      isError: createAlbumError,
+      isSuccess,
+    },
+  ] = useCreateAlbumMutation();
   const {Rp, Rh} = useResponsive();
 
   const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), [mode]);
@@ -38,6 +46,15 @@ export const AlbumsListScreen = ({
 
   const toggleDrawer = () => {
     navigation.toggleDrawer();
+  };
+
+  const CreateAlbum = async () => {
+    try {
+      const res = await createAlbum().unwrap();
+      console.log('res: ', res);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   navigation.setOptions({
@@ -57,6 +74,7 @@ export const AlbumsListScreen = ({
   return (
     <ThemeProvider>
       <View style={Styles.container}>
+        <Button title="Add Album" onPress={CreateAlbum} />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={Styles.scrollView}

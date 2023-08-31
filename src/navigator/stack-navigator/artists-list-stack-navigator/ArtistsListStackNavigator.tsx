@@ -10,7 +10,7 @@ export const ArtistsListStackNavigator: React.FC = () => {
   const albums = useSelector((state: RootState) => state.albumsList);
   const Stack = createNativeStackNavigator<ArtistsListStackParams>();
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerBackTitleVisible: false}}>
       <Stack.Screen name="ArtistsListScreen" component={ArtistsListScreen} />
     </Stack.Navigator>
   );
