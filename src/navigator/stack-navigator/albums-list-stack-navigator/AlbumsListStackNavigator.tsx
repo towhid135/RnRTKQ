@@ -15,7 +15,7 @@ export const AlbumsListStackNavigator = ({
 }: AlbumsListStackNavigatorProps) => {
   //Header Options
   const options = {
-    headerBackTitle: ' ',
+    headerBackTitleVisible: false,
     headerBackImage: () => (
       <HeaderButton
         variant="icon-button"
@@ -30,7 +30,11 @@ export const AlbumsListStackNavigator = ({
 
   const Stack = createNativeStackNavigator<AlbumsListStackParams>();
   return (
-    <Stack.Navigator screenOptions={{}}>
+    <Stack.Navigator
+      screenOptions={{
+        headerBackTitleVisible: false,
+        headerShadowVisible: true,
+      }}>
       <Stack.Screen name="AlbumsListScreen" component={AlbumsListScreen} />
       <Stack.Group screenOptions={{}}>
         <Stack.Screen
