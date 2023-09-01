@@ -1,7 +1,19 @@
 {
-    "hause-bathroom": 61697,
-    "hause-bed": 61698,
-    "hause-kitchen": 61699,
-    "hause": 61700,
-    "user": 61701
+    "Arrow-Down": 61697,
+    "Arrow-Left": 61698,
+    "Arrow-Right": 61699,
+    "Arrow-Up": 61700,
+    "Cancel": 61701,
+    "Chevron-Down": 61702,
+    "Chevron-Left": 61703,
+    "Chevron-Right": 61704,
+    "Chevron-Up": 61705,
+    "Clear": 61706,
+    "Eye-Off": 61707,
+    "Eye-On": 61708,
+    "More-2": 61709,
+    "More": 61710,
+    "Search": 61711,
+    "Support": 61712,
+    "Tick": 61713
 }

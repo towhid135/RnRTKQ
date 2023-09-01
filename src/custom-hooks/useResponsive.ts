@@ -8,12 +8,12 @@ export const useResponsive = (): UseResponsive => {
   type Height = typeof height;
 
   const Rp = (value: Width): Width => {
-    // return width * (value / 1000);
-    return (width * value) / 100;
+    //according to screen width from figma: width 375
+    return (width * value) / 375;
   };
   const Rh = (value: Height): Height => {
-    // return height * (value / 1000);
-    return (height * value) / 100;
+    //according to screen height from figma: height 812
+    return (height * value) / 812;
   };
 
   return {

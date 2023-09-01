@@ -74,7 +74,6 @@ export const AlbumsListScreen = ({
   return (
     <ThemeProvider>
       <View style={Styles.container}>
-        <Button title="Add Album" onPress={CreateAlbum} />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={Styles.scrollView}
@@ -96,6 +95,7 @@ export const AlbumsListScreen = ({
               );
             })}
           </View>
+          <Button title="Add Album" onPress={CreateAlbum} />
         </ScrollView>
       </View>
     </ThemeProvider>
