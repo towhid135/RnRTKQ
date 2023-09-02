@@ -8,7 +8,8 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
     },
     image: {
       width: '100%',
-      height: Rh(40),
+      height: Rh(400),
+      borderWidth: Rp(10),
     },
     title: {
       color: colors[mode].base.primary.normal,

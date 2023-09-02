@@ -19,6 +19,7 @@ import {useTypedSelector} from 'redux-store';
 import {ThemeProvider} from 'components';
 import {HeaderButton} from 'components';
 import {Icon} from 'components';
+import {CustomButton} from 'components/custom-button/CustomButton';
 
 export const AlbumsListScreen = ({
   route,
@@ -74,6 +75,14 @@ export const AlbumsListScreen = ({
   return (
     <ThemeProvider>
       <View style={Styles.container}>
+        <CustomButton
+          buttonName="Medium"
+          type="teritary"
+          size="medium"
+          state="enabled"
+          leftIcon={true}
+          iconName="Arrow-Left"
+        />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={Styles.scrollView}

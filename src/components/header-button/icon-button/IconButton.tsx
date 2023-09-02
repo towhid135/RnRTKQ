@@ -27,7 +27,7 @@ export const IconButton = ({
       onPress={buttonAction}
       activeOpacity={1}
       style={[Styles.container, style]}>
-      <Icon1 name={iconName} size={Rp(8)} color={iconColor} />
+      <Icon1 name={iconName} size={Rp(30)} color={iconColor} />
     </TouchableOpacity>
   );
 };

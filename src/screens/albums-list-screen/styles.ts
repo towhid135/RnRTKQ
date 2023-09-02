@@ -17,8 +17,8 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
-      paddingHorizontal: Rp(3),
-      marginBottom: Rh(5),
+      paddingHorizontal: Rp(10),
+      marginBottom: Rh(20),
     },
     headerLeft: {
       // marginLeft: Rp(1),

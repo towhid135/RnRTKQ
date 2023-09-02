@@ -1,5 +1,6 @@
 import {ReactNode} from 'react';
-import {StyleSheet, ViewProps} from 'react-native';
+import {StyleSheet, ViewProps, ColorValue} from 'react-native';
+import {IconsId} from 'utils';
 
 export type CardProps = ViewProps & {
   children: ReactNode;
@@ -42,3 +43,24 @@ export interface ImageButtonProps {
 export type HeaderButtonProps = (IconButtonProps | ImageButtonProps) & {
   variant: IconButtonVariant;
 };
+
+export interface IconProps {
+  name: IconsId;
+  size: ComponentSize;
+  color: ColorValue;
+}
+export type ComponentSize = 'small' | 'medium' | 'large';
+
+export type ComponentState = 'enabled' | 'pressed' | 'disabled';
+
+export type ComponentType = 'primary' | 'secondary' | 'teritary';
+
+export interface CustomButtonProps {
+  buttonName: string;
+  type: ComponentType;
+  size: ComponentSize;
+  state: ComponentState;
+  leftIcon?: boolean;
+  rightIcon?: boolean;
+  iconName?: IconsId;
+}
