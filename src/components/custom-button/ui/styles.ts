@@ -24,23 +24,11 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       alignItems: 'center',
       justifyContent: 'center',
     },
-    iconAndTextContainer: {
-      flexDirection: 'row',
+    disable: {
+      backgroundColor: colors[mode].base.tertiary.normal,
+      // width: Rp(64),
+      borderRadius: Rp(24),
+      alignItems: 'center',
       justifyContent: 'center',
-
-      // borderWidth: 1,
-      paddingVertical: Rp(12),
-      paddingHorizontal: Rp(32),
-    },
-    text: {
-      fontSize: Rp(10),
-      fontWeight: 'bold',
-      color: colors[mode].base.tertiary.light,
-      marginHorizontal: Rp(8),
-      alignSelf: 'center',
-    },
-
-    icon: {
-      color: colors[mode].base.tertiary.light,
     },
   });

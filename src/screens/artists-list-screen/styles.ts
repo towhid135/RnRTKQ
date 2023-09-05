@@ -14,7 +14,7 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       flexDirection: 'row',
       flexWrap: 'wrap',
       justifyContent: 'space-between',
-      paddingHorizontal: Rp(3),
+      paddingHorizontal: Rp(12),
       marginBottom: Rh(5),
     },
   });

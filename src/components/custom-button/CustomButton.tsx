@@ -1,15 +1,16 @@
 import React, {useCallback} from 'react';
 import {Text, View} from 'react-native';
-
-import {CustomButtonProps, ThemeProvider} from 'components';
+import {styles} from './styles';
+import {CustomButtonProps} from 'components/type/type';
 import {useResponsive} from 'custom-hooks';
 import {useTypedSelector} from 'redux-store';
-import {SmallButton} from './small-button/SmallButton';
-import {MediumButton} from './medium-button/MediumButton';
-import {LargeButton} from './large-button/LargeButton';
+import {CustomButtonUI} from './ui/CustomButtonUI';
+import {Icon} from 'components/custom-icon/icon/Icon';
+import {CustomText} from 'components/custom-text/CustomText';
 
 export const CustomButton = ({
   buttonName,
+  action,
   type,
   size,
   state,
@@ -17,44 +18,49 @@ export const CustomButton = ({
   rightIcon,
   iconName,
 }: CustomButtonProps) => {
+  const {Rp, Rh} = useResponsive();
+  const mode = useTypedSelector(state => state.colorMode.mode);
+  const StyleFunc = useCallback(() => styles({Rp, Rh, mode}), []);
+  const Styles = StyleFunc();
+
+  let textFont: 'B1' | 'B2' | 'B3';
+
   switch (size) {
     case 'small':
-      return (
-        <SmallButton
-          buttonName={buttonName}
-          type={type}
-          size={size}
-          state={state}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          iconName={iconName}
-        />
-      );
+      textFont = 'B3';
+      break;
     case 'medium':
-      return (
-        <MediumButton
-          buttonName={buttonName}
-          type={type}
-          size={size}
-          state={state}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          iconName={iconName}
-        />
-      );
+      textFont = 'B2';
+      break;
     case 'large':
-      return (
-        <LargeButton
-          buttonName={buttonName}
-          type={type}
-          size={size}
-          state={state}
-          leftIcon={leftIcon}
-          rightIcon={rightIcon}
-          iconName={iconName}
-        />
-      );
+      textFont = 'B1';
+      break;
     default:
-      return <View></View>;
+      textFont = 'B1';
+      return;
   }
+
+  return (
+    <CustomButtonUI
+      type={type}
+      state={state}
+      activeOpacity={0.8}
+      onPress={action}>
+      <View style={Styles[size]}>
+        {leftIcon && (
+          <Icon
+            name={iconName ? iconName : 'Cancel'}
+            size={size}
+            color={Styles.icon.color}
+          />
+        )}
+        <CustomText style={Styles.text} font={textFont}>
+          {buttonName}
+        </CustomText>
+        {rightIcon && (
+          <Icon name="Arrow-Left" size={size} color={Styles.icon.color} />
+        )}
+      </View>
+    </CustomButtonUI>
+  );
 };

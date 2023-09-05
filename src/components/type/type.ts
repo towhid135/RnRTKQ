@@ -1,5 +1,10 @@
 import {ReactNode} from 'react';
-import {StyleSheet, ViewProps, ColorValue} from 'react-native';
+import {
+  StyleSheet,
+  ViewProps,
+  ColorValue,
+  TouchableOpacityProps,
+} from 'react-native';
 import {IconsId} from 'utils';
 
 export type CardProps = ViewProps & {
@@ -49,6 +54,15 @@ export interface IconProps {
   size: ComponentSize;
   color: ColorValue;
 }
+
+export enum FontFamily {
+  RobotoBold = 'Roboto-Bold',
+  RobotoLight = 'Roboto-Light',
+  RobotoMedium = 'Roboto-Medium',
+  RobotoRegular = 'Roboto-Regular',
+  RobotoThin = 'Roboto-Thin',
+}
+
 export type ComponentSize = 'small' | 'medium' | 'large';
 
 export type ComponentState = 'enabled' | 'pressed' | 'disabled';
@@ -57,6 +71,7 @@ export type ComponentType = 'primary' | 'secondary' | 'teritary';
 
 export interface CustomButtonProps {
   buttonName: string;
+  action: () => void;
   type: ComponentType;
   size: ComponentSize;
   state: ComponentState;

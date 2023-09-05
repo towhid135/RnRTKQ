@@ -10,7 +10,6 @@ export const styles = ({Rp, Rh, mode}: StyleFunctionType) =>
       borderWidth: 1,
       borderColor: colors[mode].base.primary.normal,
       padding: Rp(2),
-      borderRadius: Rp(1),
       width: '95%',
     },
     titleStyle: {

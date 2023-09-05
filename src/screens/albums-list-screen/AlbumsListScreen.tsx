@@ -7,9 +7,8 @@ import {
   ScrollView,
   Image,
   RefreshControl,
+  ViewStyle,
 } from 'react-native';
-import {Card} from 'components';
-import {API_URL} from '@env';
 import {useAlbumsListQuery, useCreateAlbumMutation} from 'redux-store';
 import {AlbumsListScreenProps} from 'navigator';
 import {useResponsive} from 'custom-hooks';
@@ -18,7 +17,6 @@ import {styles} from './styles';
 import {useTypedSelector} from 'redux-store';
 import {ThemeProvider} from 'components';
 import {HeaderButton} from 'components';
-import {Icon} from 'components';
 import {CustomButton} from 'components/custom-button/CustomButton';
 
 export const AlbumsListScreen = ({
@@ -75,14 +73,6 @@ export const AlbumsListScreen = ({
   return (
     <ThemeProvider>
       <View style={Styles.container}>
-        <CustomButton
-          buttonName="Medium"
-          type="teritary"
-          size="medium"
-          state="enabled"
-          leftIcon={true}
-          iconName="Arrow-Left"
-        />
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={Styles.scrollView}
@@ -104,8 +94,14 @@ export const AlbumsListScreen = ({
               );
             })}
           </View>
-          <Button title="Add Album" onPress={CreateAlbum} />
         </ScrollView>
+        <CustomButton
+          buttonName="Add"
+          action={CreateAlbum}
+          type="teritary"
+          size="large"
+          state="enabled"
+        />
       </View>
     </ThemeProvider>
   );
